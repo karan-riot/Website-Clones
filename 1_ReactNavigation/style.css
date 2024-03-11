@@ -195,7 +195,7 @@ main{
 
 
  .top-sec{
-    padding: 8rem 0 4rem ;
+    padding: 10rem 0 4rem ;
     background: linear-gradient(var(--bg-color),var(--bg-color-2));
     display: flex;
     flex-direction: column;
@@ -203,18 +203,23 @@ main{
 }
 
 .container-box{
-    display: flex;
+    display: grid;
+    grid-template-areas: "a b c";
+    gap: 4rem;
     align-items: center;
     justify-content: center;
-    gap: 2.3rem;
 }
 
+
 .phone{
-    width: 300px;
+    max-width: 300px;
+    grid-area: a;
 }
 
 .stack{
-    width: 350px;
+    max-width: 350px;
+    min-width: 250px;
+    grid-area: c;
 }
 
 .container-box .display{
@@ -226,6 +231,7 @@ main{
     align-items: center;
     position: relative;
     padding: 4rem 2rem;
+    grid-area: b;
 }
 
 .display .bg-logo{
@@ -240,14 +246,16 @@ main{
     font-weight: 900;
     margin-bottom: 1rem;
     z-index: 1;
+    text-align: center;
 }
 
 .display h3{
     color: var(--bold-text-color);
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 1rem;
     z-index: 1;
+    text-align: center;
 }
 
 .display .btn{
@@ -461,4 +469,15 @@ footer .f-container{
 .f-col ul li a img{
     height: 0.75rem;
     width: 0.75rem;
+}
+
+
+
+@media (max-width: 1050px){
+    .container-box{
+        display: grid;
+        grid-template-areas: "b b"
+                             "a c";
+        gap: 4rem;
+    }
 }
